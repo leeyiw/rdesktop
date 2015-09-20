@@ -834,9 +834,6 @@ sec_recv(uint8 * rdpver)
 				{
 					uint8 swapbyte;
 
-					in_uint8s(s, 8);	/* signature */
-					sec_decrypt(s->p, s->end - s->p);
-
 					/* Check for a redirect packet, starts with 00 04 */
 					if (s->p[0] == 0 && s->p[1] == 4)
 					{
